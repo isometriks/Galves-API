@@ -1,0 +1,20 @@
+{
+    "name": "isometriks/galves-api",
+    "description": "Guzzle API for interacting with Galves Vehicle API",
+    "authors": [
+        {
+            "name": "isometriks",
+            "email": "craig.blanchette@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Galves\\Api\\": ""
+        }
+    },
+    "require": {
+        "symfony/config": "dev-master",
+        "guzzle/guzzle": "dev-master",
+        "guzzlehttp/guzzle": "dev-master"
+    }
+}

@@ -1,0 +1,106 @@
+{
+    "name": "Galves",
+    "apiVersion": "v1",
+    "baseUrl": "http://www.galves.com/services/priceguide.asmx",
+    "description": "Galves API",
+    "operations": {
+
+        "AuthenticateDealer": {
+            "httpMethod": "GET",
+            "uri": "AuthenticateDealer",
+            "summary": "Authenticate Dealer",
+            "responseClass": "\\Galves\\Api\\Response\\AuthenticateDealer",
+            "parameters": {
+                "username": {
+                    "location": "query"
+                },
+                "acctNo": {
+                    "location": "query"
+                },
+                "partnername": {
+                    "location": "query"
+                },
+                "partnerPassword": {
+                    "location": "query"
+                },
+                "partnerAcctNo": {
+                    "location": "query"
+                }
+            }
+        },
+
+        "BaseCommand": {
+            "httpMethod": "GET",
+            "parameters": {
+                "authToken": {
+                    "location": "query"
+                }
+            }
+        },
+
+        "GetYears": {
+            "extends": "BaseCommand",
+            "uri": "GetYears",
+            "summary": "Get Available Years",
+            "responseClass": "\\Galves\\Api\\Response\\GetYears"
+        },
+
+        "GetMakes": {
+            "extends": "BaseCommand",
+            "uri": "GetMakes",
+            "summary": "Get Available Makes",
+            "responseClass": "\\Galves\\Api\\Response\\GetMakes"
+        },
+
+        "GetModels": {
+            "extends": "BaseCommand",
+            "uri": "GetModels",
+            "summary": "Get Models for a make and year",
+            "responseClass": "\\Galves\\Api\\Response\\GetModels",
+            "parameters": {
+                "year": {
+                    "location": "query"
+                },
+                "make": {
+                    "location": "query"
+                }
+            }
+        },
+
+        "GetStyles": {
+            "extends": "GetModels",
+            "uri": "GetStyles",
+            "summary": "Returns xml set for all styles for supplied make, model and year.",
+            "responseClass": "\\Galves\\Api\\Response\\GetStyles",
+            "parameters": {
+                "model": {
+                    "location": "query"
+                }
+            }
+        },
+
+        "GetVehicle": {
+            "extends": "BaseCommand",
+            "uri": "GetVehicle",
+            "summary": "Returns xml set for a specific vehicle based on vehicle id.",
+            "responseClass": "\\Galves\\Api\\Response\\GetVehicle",
+            "parameters": {
+                "guid": {
+                    "location": "query"
+                }
+            }
+        },
+
+        "GetMileageAdjustment": {
+            "extends": "GetVehicle",
+            "uri": "GetMileageAdjustment",
+            "summary": "Returns xml indicating vehicle mileage class, mileage deduction amount.",
+            "responseClass": "\\Galves\\Api\\Response\\GetMileageAdjustment",
+            "parameters": {
+                "mileage": {
+                    "location": "query"
+                }
+            }
+        }
+    }
+}
