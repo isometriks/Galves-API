@@ -13,8 +13,7 @@
         }
     },
     "require": {
-        "symfony/config": "dev-master",
-        "guzzle/guzzle": "dev-master",
-        "guzzlehttp/guzzle": "dev-master"
+        "guzzle/guzzle": "@stable",
+        "guzzlehttp/guzzle": "@stable"
     }
 }
