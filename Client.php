@@ -29,14 +29,8 @@ class Client extends GuzzleClient
 
     public function login(array $credentials)
     {
-        $data = array_replace(array(
-            'partnername'       => 'galvesapi',
-            'partnerPassword'   => 'gapl654',
-            'partnerAcctNo'     => '114809',
-        ), $credentials);
-
         // Run command
-        $authToken = $this->call('AuthenticateDealer', $data);
+        $authToken = $this->call('AuthenticateDealer', $credentials);
 
         // Now add the subscriber
         $this->addSubscriber(new AuthTokenSubscriber($authToken));
